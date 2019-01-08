@@ -1,0 +1,8 @@
+build
+database.rules.json
+firebase.json
+.firebaserc
+node_modules
+package-lock.json
+README.md
+src/firebase

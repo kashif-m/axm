@@ -1,0 +1,1059 @@
+@import url('https://fonts.googleapis.com/css?family=Rammetto+One');
+
+@font-face {
+    font-family: classic;
+    src: url('../fonts/Classic.ttf');
+}
+
+@font-face {
+    font-family: bend;
+    src: url('../fonts/Bend 2 Squares BRK.ttf');
+}
+
+@font-face {
+    font-family: beliz;
+    src: url('../fonts/Belizarius.ttf');
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+
+    -webkit-overflow-scrolling: touch;
+
+    overflow: hidden;
+    /* background: linear-gradient(rgb(255, 255, 255), black); */
+}
+
+body > * {
+    height: 100%;
+}
+
+button:focus {
+    outline: none;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+
+input {
+    border-radius: 0;
+}
+
+
+.none {
+    display: none;
+}
+
+.wait {
+    height: 100vh;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    
+    background: rgba(0, 0, 0, 0.488);
+
+    display: grid;
+}
+.loader {
+    border: 7px solid rgb(0, 0, 0);
+    border-radius: 100%;
+    width: 3vh;
+    height: 1px;
+    animation: spin .5s linear infinite;
+
+    align-self: center;
+    justify-self: center;
+}
+@keyframes spin {
+    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+/* starts here */
+.home-wrap {
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(13, 1fr);
+}
+
+
+
+/* NAVBAR in HOME */
+.nav-wrap {
+    grid-column: 1 / -1;
+    grid-row: 1 / 4;
+
+    width: 100%;
+
+    justify-self: center;
+
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+.sign-out {
+    grid-column: -2 / -1;
+    grid-row: 1 / 2;
+    cursor: pointer;
+    display: flex;
+    justify-self: flex-end;
+    height: 6vh;
+}
+.logo {
+    grid-column: 3 / 9;
+    grid-row: 2 / -1;
+    height: 20vh;
+    width: 20vh;
+
+    justify-self: center;
+
+    border-radius: 50%;
+    margin: auto;
+
+    border: 0;
+    box-shadow: gainsboro 0 -10px 60px;
+
+    background-image: url('../images/logo.jpeg');
+    background-size: cover;
+}
+.logo-on {
+    border-radius: 50%;
+}
+
+
+/* MAIN wrap */
+.main-wrap {
+    grid-column: 1 / -1;
+    grid-row: 5 / -1;
+
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+
+    overflow: auto;
+}
+
+
+
+@media only screen and (min-width: 500px) {
+
+    /* MAIN FORM */
+    .form {
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+
+        margin: 10px 3vw 20px 3vw;
+        padding: 2vh;
+
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+    }
+    .main-form, .wrap-event {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-gap: 1vh;
+    }
+    .main-form {
+        grid-template-rows: repeat(4, 1fr);
+        grid-column: 1 / 5;
+        grid-row: 2 / 7;
+
+        min-width: 20vw;
+        max-width: 30vw;
+        justify-self: center;
+        border: 0;
+        border-style: solid;
+        border-color: black;
+        border-top-width: 10px;
+        border-radius: 5px;
+        box-shadow: gainsboro 0 0 10px;
+
+        background-color: whitesmoke;
+
+        padding: 2rem;
+    }
+    .main-heading {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+
+        margin: 0;
+        justify-self: center;
+        align-self: center;
+
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 3vh;
+    }
+    .main-form > * {
+        display: flex;
+    }
+    .name-label, .phone-label, .email-label, .college-label, .year-label {
+        grid-column: 1 / 3;
+        align-items: center;
+
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+    }
+    .name-input, .email-input, .college-input, .year-input {
+        grid-column: 3 / -2;
+
+        justify-self: center;
+
+        width: 90%;
+        border: 0;
+        border-style: solid;
+        border-bottom-width: 2px;
+        border-color: gainsboro;
+        padding-left: .4rem;
+
+        color: darkslategray;
+        background-color: whitesmoke;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 1.5vh;
+
+        transition: border-color .25s;
+    }
+    .name-input:focus, .email-input:focus, .cash-collected-input:focus, .phone-input:focus, .team-member1-name:focus, .team-member2-name:focus {
+        transition: border-color .25s;
+    }
+    .phone-label__country {
+        grid-column: 3 / 4;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        align-items: center;
+
+        justify-content: center;
+        font-size: 1.4vh;
+    }
+    .phone-input {
+        grid-column: 4 / -2;
+
+        width: 90%;
+        border: 0;
+        border-style: solid;
+        border-bottom-width: 2px;
+        border-color: gainsboro;
+        padding-left: .4rem;
+
+        background-color: whitesmoke;    
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 1.5vh;
+
+        transition: border-color .25s;
+    }
+
+    .wrap-event {
+        grid-column: 5 / -1;
+        grid-row: 1 / -1;
+
+        min-width: 30vw;
+        max-width: 30vw;
+        justify-self: center;
+        border: 0;
+        border-style: solid;
+        border-color: black;
+        border-top-width: 10px;
+        border-radius: 5px;
+        box-shadow: gainsboro 0 0 10px;
+
+        background-color: whitesmoke;
+
+        display: grid;
+        grid-template-rows: repeat(5, 1fr);
+
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: rgb(43, 35, 35);
+    }
+    .event-heading {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        margin: 0;
+
+        justify-self: center;
+        align-self: center;
+
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 800;
+        font-size: 3vh;
+    }
+    .event-form {
+        grid-column: 2 / -2;
+        grid-row: 2 / -2;
+
+        appearance: none;
+
+        display: grid;
+        grid-template-rows: auto;
+        overflow: auto;
+    }
+    .event-form > div {
+        grid-column: 1 / -1;
+        align-items: center;
+
+        display: grid;
+        grid-template-columns: 2fr 10fr;
+
+        margin: .5em;
+        font-size: 2vh;
+    }
+    .event-form > div > input {
+        grid-column: 1 / 2;
+    }
+    .some {
+        grid-column: 2 / 3;
+    }
+    .some > input {
+        width: 60%;
+        margin: .5em;
+
+        border: 0;
+        border-style: solid;
+        border-color: gainsboro;
+        border-bottom-width: 2px;
+
+        background-color: whitesmoke;
+        margin: 0 0 0 .5em;
+        padding: .2em 0 .2em .5em;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: .8em;
+
+        transition: border-color .25s ease-in-out;
+    }
+    .bind-both {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+
+        grid-column: 1 / -1;
+    }
+    .bind-both > input {
+        width: 60%;
+        margin: .5em;
+
+        border: 0;
+        border-style: solid;
+        border-color: gainsboro;
+        border-bottom-width: 2px;
+
+        background-color: whitesmoke;
+        margin: 0 0 0 .5em;
+        padding: .2em 0 .2em .5em;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: .8em;
+
+        transition: border-color .25s ease-in-out;
+    }
+    .submit-form-button {
+        grid-column: 6 / -1;
+
+        border: 0;
+        justify-self: center;
+        align-self: center;
+        background-color: whitesmoke;
+
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 900;
+
+        transition: all 0.3s;
+    }
+    .submit-form-button:hover {
+        color: rgb(42, 91, 44);
+
+        transition: all 0.3s;
+    }
+}
+
+
+
+
+/* check details */
+.check-wrap {
+    grid-column: 2 / -2;
+    grid-row: 2 / -2;
+
+    min-width: 30vw;
+    min-height: 30vh;
+    justify-self: center;
+    align-self: flex-start;
+
+    padding: 2vh;
+    border: 0;
+    border-style: solid;
+    border-top-width: .7vh;
+    border-color: black;
+    border-radius: 2px;
+    box-shadow: gainsboro 0 0 20px;
+
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+
+    background-color: whitesmoke;
+}
+.check-wrap > * {
+    grid-column: 1 / -1;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    align-self: center;
+}
+.cash-label {
+    grid-row: 4 / 5;
+    font-weight: 600;
+}
+.check-wrap > label {
+    grid-column: 1 / -1 !important;
+    justify-self: flex-start;
+    font-size: 15px;
+}
+.event-div {
+    grid-column: 1 / -1;
+    grid-row: 5 / 8;
+
+    padding: 0 0 0 2vw;
+    overflow: auto;
+
+    display: grid;
+}
+.opted-events {
+    display: flex;
+    font-size: 15px;
+}
+.inner-members {
+    margin: 0;
+}
+.authenticate-button {
+    grid-column: -5 / -2;
+    grid-row: -2 / -1;
+
+    align-self: flex-start;
+    border: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 900;
+    background-color: whitesmoke;
+    color: rgb(111, 106, 106);
+
+    transition: all 0.35s;
+}
+.authenticate-button:hover {
+    color: black;
+
+    transition: all 0.35s;    
+}
+.back-to-form {
+    grid-column: 2 / 5;
+    grid-row: -2 / -1;
+
+    align-self: flex-start;
+    border: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 900;
+    background-color: whitesmoke;
+    color: dimgrey;
+
+    transition: all 0.35s;
+}
+.back-to-form:hover {
+    color: red;
+
+    transition: all 0.35s;
+}
+
+
+/* already registered */
+.already-registered-wrap {
+    grid-column: 2 / -2;
+    grid-row: 2 / -2;
+
+    justify-self: center;
+    align-self: flex-start;
+
+    border-style: solid;
+    border-width: 1vh 0 0 0;
+    border-color: red;
+    background-color: white;
+    padding: 3vw;
+    border-radius: 5px;
+    box-shadow: gainsboro 0 0 20px;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.5vh;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, .65fr);
+}
+.already-registered-wrap > button {
+    grid-column: 1 / 2;
+    font-size: 2.8vh;
+
+    align-self: flex-start;
+    justify-self: flex-start;
+    background-color: white;
+    
+    margin: 1rem;
+    margin-bottom: 0;
+}
+.already-registered-wrap > ul {
+    grid-column: 1 / -1;
+    grid-row: 1 / -2;
+
+    align-self: center;
+    justify-self: center;
+
+    padding: 0;
+}
+.already-registered-wrap > ul > li {
+    margin-left: 5vh;
+    font-size: 2.4vh;
+}
+.already-registered-wrap > ul > li:nth-child(1) {
+    margin-top: 2vh;
+}
+
+
+/* RECAPTCHA */
+.recaptcha-container {
+    grid-column: 2 / -2;
+    grid-row: 2 / -2;
+}
+
+
+/* VERIFICATION */
+.verification-wrap {
+    grid-column: 2 / -2;
+    grid-row: 3 / -3;
+
+    justify-self: center;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+}
+.verification-code {
+    grid-column: 1 / -1;
+    grid-row: 4 / 5;
+
+    width: 50%;
+    align-self: center;
+    justify-self: center;
+    padding-left: .7rem;
+
+    border: 0;
+    border-style: solid;
+    border-bottom-width: 2px;
+    border-color: gainsboro;
+    background-color: white;
+
+    transition: all .25s ease-out;
+}
+.verification-code:focus {
+    border-color: green;
+
+    transition: all .25s ease-in;
+}
+
+.verify-code-button {
+    grid-column: 3 / 5;
+    grid-row: 6 / 7;
+
+    justify-self: center;
+    border: 0;
+    background-color: white;
+    color: black;
+
+    font-size: 1em;
+
+    transition: all 0.35s;
+}
+.verify-code-button:hover {
+    color: green;
+
+    transition: all 0.35s;
+}
+.wrong-code {
+    grid-column: 2 / -2;
+    grid-row: 2 / 3;
+
+    justify-self: center;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: red;
+}
+
+
+/* SHOW UPLOAD DONE */
+.upload-wrap {
+    grid-column: 2 / -2;
+    grid-row: 2 / -2;
+
+    justify-self: center;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+.upload-wrap > div {
+    grid-column: 2 / -2;
+    font-size: 1em;
+}
+.registered-wrap > li:first-child {
+    margin-top: 1em;
+}
+.registered-wrap > li {
+    margin-left: 2rem;
+    font-size: .8em;
+
+    max-height: 50vh;
+    overflow: auto;
+
+    color: rgb(34, 28, 28);
+}
+.upload-wrap > button {
+    grid-row: 2 / 3;
+    grid-column: 4 / 5;
+
+    max-width: 6rem;
+    max-height: 2rem;
+
+    border: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 900;
+    background-color: white;
+    color: rgb(58, 54, 54);
+
+    transition: all 0.35s;
+}
+.upload-wrap > button:hover {
+    color: black;
+
+    transition: all 0.35s;
+}
+
+
+
+
+
+/* LOGIN  */
+.wrap-login {
+    height: 100%;
+    
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(13, 1fr);
+}
+.wrap-campaigner {
+    grid-column: 1 / -1;
+    grid-row: 7 / 11;
+
+    align-self: center;
+    justify-self: center;
+
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+}
+.wrap-campaigner > label {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    font-size: 1rem;
+    background-color: white;
+
+    align-self: center;
+    justify-self: flex-end;
+}
+.wrap-campaigner > input {
+    grid-column: 4 / -2;
+    width: 70%;
+    grid-row: 1 / 2;
+
+    border: 0;
+    border-bottom: 2px solid gainsboro;
+    border-radius: 0;
+    padding-left: .6vh;
+    margin-left: 1vh;
+
+    align-self: center;
+
+    transition: border-color .2s ease-out;
+}
+.wrap-campaigner > input:focus {
+    border-color: green;
+
+    transition: border-color .2s ease-in;
+}
+.login {
+    grid-column: 6 / 8;
+    grid-row: 4 / 5;
+
+    border: 0;
+    background-color: white;
+    font-weight: 800;
+}
+.enter-code {
+    grid-column: 1 / -1;
+    grid-row: 6 / 8;
+
+    justify-self: center;
+    align-self: center;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+.enter-code > input {
+    grid-column: 1 / -1;
+
+    appearance: textfield;
+
+    border: 0;
+    width: 50%;
+    padding-left: 1vh;
+    justify-self: center;
+    border-bottom: 2px solid gainsboro;
+
+    transition: all 0.2s ease-out;
+}
+.enter-code > input:focus {
+    border-color: green;
+
+    transition: all 0.2s ease-in;
+}
+.enter-code > button {
+    grid-column: -2 / -1;
+    grid-row: 3 / 4;
+
+    border: 0;
+    background-color: white;
+    font-weight: 800;
+}
+.error {
+    grid-column: 2 / -2;
+    grid-row: 8 / 9;
+
+    align-self: flex-start;
+    justify-content: center;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: red;
+    font-weight: 800;
+}
+
+
+
+
+
+@media only screen and (max-width: 800px) {
+
+    html, body {
+        overflow: auto;
+    }
+
+
+    /* MAIN FORM */
+    .form {
+        grid-column: 2 / -2;
+        grid-row: 2 / -2;
+
+        border: 0;
+        border-style: solid;
+        border-top-width: .7vh;
+        border-color: rgb(41, 27, 27);
+        border-radius: 2px;
+        box-shadow: gainsboro 0 0 20px;
+
+        padding: 2vh;
+        background-color: whitesmoke;
+
+        justify-self: center;
+        align-self: flex-start;
+
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+    }
+    .main-form, .wrap-event {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-gap: 1vh;
+    }
+    .main-form {
+        grid-template-rows: repeat(4, 1fr);
+        grid-column: 1 / -1;
+        grid-row: 1 / 4;
+    }
+    .main-heading {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+
+        margin: 0;
+        justify-self: center;
+        align-self: center;
+
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 3vh;
+    }
+    .main-form > * {
+        display: flex;
+    }
+    .name-label, .phone-label, .email-label, .college-label, .year-label {
+        grid-column: 1 / 3;
+        align-items: center;
+
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+    }
+    .name-input, .email-input, .college-input , .year-input{
+        grid-column: 3 / -2;
+
+        justify-self: center;
+
+        width: 90%;
+        border: 0;
+        border-style: solid;
+        border-bottom-width: 2px;
+        border-color: gainsboro;
+        padding-left: .4rem;
+
+        background-color: whitesmoke;
+        color: darkslategray;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 1.5vh;
+
+        transition: border-color .25s;
+    }
+    .name-input:focus, .email-input:focus, .cash-collected-input:focus, .phone-input:focus, .team-member1-name:focus, .team-member2-name:focus {
+        transition: border-color .25s;
+    }
+    .phone-label__country {
+        grid-column: 3 / 4;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        align-items: center;
+
+        justify-content: center;
+        background-color: whitesmoke;
+        font-size: 1.4vh;
+    }
+    .phone-input {
+        grid-column: 4 / -2;
+
+        width: 90%;
+        border: 0;
+        border-style: solid;
+        border-bottom-width: 2px;
+        border-color: gainsboro;
+        padding-left: .4rem;
+
+        background-color: whitesmoke;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 1.5vh;
+
+        transition: border-color .25s;
+    }
+
+    .wrap-event {
+        grid-column: 1 / -1;
+        grid-row: 3  / -1;
+
+        display: grid;
+        grid-template-rows: repeat(5, 1fr);
+        margin-top: 4vh;
+
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: rgb(43, 35, 35);
+    }
+    .event-heading {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        margin: 0;
+
+        justify-self: center;
+        align-self: center;
+
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 800;
+        font-size: 3vh;
+    }
+    .event-form {
+        grid-column: 1 / -1;
+        grid-row: 2 / -2;
+
+        appearance: none;
+
+        max-height: 23vh;
+        min-height: 20vh;
+
+        display: grid;
+        grid-template-rows: auto;
+        overflow: auto;
+    }
+    .event-form > div {
+        grid-column: 1 / -1;
+        align-items: center;
+
+        display: grid;
+        grid-template-columns: 2fr 10fr;
+
+        font-size: 2vh;
+    }
+    .event-form > div > input {
+        grid-column: 1 / 2;
+    }
+    .some {
+        grid-column: 2 / 3;
+    }
+    .some > input {
+        width: 60%;
+
+        border: 0;
+        border-style: solid;
+        border-color: gainsboro;
+        border-bottom-width: 2px;
+        background-color: whitesmoke;
+
+        margin: 0 0 0 .5em;
+        padding: .2em 0 .2em .5em;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 1em;
+
+        transition: border-color .25s ease-in-out;
+    }
+    .bind-both {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+
+        grid-column: 1 / -1;
+    }
+    .bind-both > input {
+        width: 60%;
+
+        border: 0;
+        border-style: solid;
+        border-color: gainsboro;
+        border-bottom-width: 2px;
+        background-color: whitesmoke;
+
+        margin: 0 0 0 .5em;
+        padding: .2em 0 .2em .5em;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 1em;
+
+        transition: border-color .25s ease-in-out;
+    }
+    .submit-form-button {
+        grid-column: 1 / -1;
+
+        border: 0;
+        justify-self: flex-end;
+        align-self: flex-end;
+        background-color: whitesmoke;
+
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 900;
+
+        transition: all 0.3s;
+    }
+    .submit-form-button:hover {
+        color: rgb(42, 91, 44);
+
+        transition: all 0.3s;
+    }
+
+
+    .wrap-campaigner {
+        grid-row: 6 / -3 !important;
+    }
+    .wrap-campaigner > input {
+        grid-column: 5 / -2;
+        font-size: 2.2vh;
+    }
+
+    .already-registered-wrap > button {
+        font-size: 3vh;
+    
+        margin: 1rem;
+        margin-bottom: 0;
+    }
+
+    .main-wrap {
+        grid-row: 5 / -1;
+        grid-gap: 1vh;
+        overflow: auto;
+    }
+    .main-form {
+        grid-column: 1 / -1;
+        grid-row: 1 / 4;
+
+        justify-self: center;
+        align-self: center;
+    }
+    .main-form > input {
+        border-bottom-width: 1.7px;
+    }
+    .name-label, .phone-label, .email-label, .name-input, .phone-input, .email-input, .college-input, .college-label, .year-label, .year-input {
+        font-size: 2.2vh;
+    }
+    .phone-label__country {
+        font-size: 2vh;
+    }
+    .wrap-event {
+        grid-row: 4 / -1;
+
+        margin-top: 1vh;
+        border: 0;
+        box-shadow: gainsboro 0 0;
+        min-height: 200px;
+        margin-bottom: 2vh;
+    }
+    .event-form {
+        grid-column: 1 / -1;
+        grid-row: 2 / -2;
+
+        border: 0;
+        overflow: auto;
+
+        max-height: 40vh;
+    }
+    .event-heading {
+        font-size: 2.8vh;
+    }
+
+    .check-wrap > label {
+        font-size: 2.3vh;
+    }
+    .check-wrap {
+        grid-row: 2 / -2;
+    }
+
+    .upload-wrap > div {
+        grid-column: 1 / -1;
+        font-size: .6em;
+    }
+    .registered-wrap > li:first-child {
+        margin-top: 1em;
+    }
+    .registered-wrap > li {
+        font-size: .9em;
+    }
+
+}
+
